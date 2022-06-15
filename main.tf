@@ -2,7 +2,11 @@ module "os" {
   source       = "./os"
   vm_os_simple = "${var.vm_os_simple}"
 }
-
+  
+provider “azurerm” {
+feature {}
+}
+  
 resource "azurerm_resource_group" "vm" {
   name     = "${var.resource_group_name}"
   location = "${var.location}"
